@@ -10,11 +10,10 @@ pipeline {
             steps {
                 sh 'mvn test'
             }
-            post{
-                success{
-                    echo "Artifacts"
-                    archiveArtifacts artifacts: '**/target/*.war'
-                }
+        }
+        stage('...Package...') {
+            steps {
+                sh 'mvn package'
             }
         }
     }
